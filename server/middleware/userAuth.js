@@ -9,16 +9,11 @@ const userAuth = async (req, res, next) => {
 
     try {
         const tokenDecode = jwt.verify(token, process.env.JWT_SECRET);
-
-        if (tokenDecode.id) {
-            req.body.userId = tokenDecode.id; // Store the decoded user ID in the request body
-        } else {
-            return res.json({ success: false, message: 'Not authorized. Please log in again.' });
-        }
-
-        next();  // Proceed to the next middleware or route handler
+        req.body.userId = tokenDecode.id;
+        next();
     } catch (error) {
-        return res.json({ success: false, message: error.message });
+        console.error("JWT Verification Error on Vercel:", error);
+        return res.json({ success: false, message: 'Not authorized. Please log in again.' });
     }
 };
 
