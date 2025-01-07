@@ -10,7 +10,7 @@ authRouter.post('/login', login);
 authRouter.post('/logout', logout);
 authRouter.post('/send-verify-otp', userAuth, sendVerifyOtp);  // Use the middleware and controller
 authRouter.post('/verify-account', userAuth, verifyEmail);  // Use the middleware and controller
-authRouter.get('/is-Auth', userAuth, isAuthenticated);  // Use the middleware and controller
+authRouter.get('/is-auth', userAuth, isAuthenticated);  // Use the middleware and controller
 authRouter.post('/send-reset-otp',sendResetOtp);  // Use the middleware and controller
 authRouter.post('/reset-password',resetPassword);  // Use the middleware and controller
 
