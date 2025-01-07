@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 connectDB();
 
-const allowedOrigins = ['http://localhost:5173','https://mern-auth-pu54.onrender.com']
+const allowedOrigins = ['http://localhost:5173','https://prodigy-fs-01-puce.vercel.app']
 
 app.use(express.json());
 app.use(cookieParser());
